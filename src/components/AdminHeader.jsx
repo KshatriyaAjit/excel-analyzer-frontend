@@ -77,7 +77,7 @@ export default function AdminHeader() {
           >
             <span className="sm:inline">{profile.name}</span>
             <img
-              src={`http://localhost:5000${profile.avatar}`}
+              src={profile.avatar}
               alt="Avatar"
               className="w-9 h-9 rounded-full object-cover border border-indigo-500"
             />

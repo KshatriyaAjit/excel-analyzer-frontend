@@ -32,11 +32,7 @@ export default function Sidebar() {
     { path: "/admin/files", name: "File Management", icon: <FaDatabase /> },
   ];
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    window.location.href = "/login";
-  };
+
 
   return (
     <>
@@ -124,18 +120,6 @@ export default function Sidebar() {
               )}
             </ul>
           </nav>
-
-          {/* Logout button */}
-          <button
-            onClick={handleLogout}
-            className="relative inline-flex items-center justify-center px-6 py-2 mt-4 font-semibold text-red-600 border border-red-600 rounded-md overflow-hidden transition-all duration-300 group hover:bg-red-600 hover:text-white shadow-sm cursor-pointer"
-          >
-            <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-red-100 group-hover:w-full group-hover:h-full group-hover:rounded-md group-hover:scale-110 opacity-20"></span>
-            <span className="relative z-10 flex items-center gap-2">
-              <FaSignOutAlt className="w-5 h-5" />
-              Logout
-            </span>
-          </button>
         </div>
       </aside>
     </>
