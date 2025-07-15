@@ -63,9 +63,9 @@ export default function AdminHeader() {
           className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition cursor-pointer"
         >
           {darkMode ? (
-            <SunIcon className="h-5 w-5 text-yellow-400" />
+            <SunIcon className="h-7 w-7 text-yellow-400" />
           ) : (
-            <MoonIcon className="h-5 w-5 text-gray-600" />
+            <MoonIcon className="h-7 w-7 text-gray-600" />
           )}
         </button>
 
@@ -75,11 +75,11 @@ export default function AdminHeader() {
             to="/profile"
             className="flex items-center gap-2 text-sm text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-300 transition"
           >
-            <span className="sm:inline">{profile.name}</span>
+            <span className=" hidden sm:inline">{profile.name}</span>
             <img
               src={profile.avatar}
               alt="Avatar"
-              className="w-9 h-9 rounded-full object-cover border border-indigo-500"
+              className="w-15 h-15 rounded-full object-cover border border-indigo-500"
             />
           </Link>
         )}

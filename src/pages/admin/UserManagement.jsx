@@ -67,7 +67,8 @@ export default function UserManagement() {
                 <td className="border px-3 py-2">{user.name}</td>
                 <td className="border px-3 py-2">{user.email}</td>
                 <td className="border px-3 py-2 capitalize">{user.role}</td>
-                <td className="border px-3 py-2 space-x-2">
+                <td className="border px-3 py-2">
+                 <div className="flex flex-col sm:flex-row sm:items-center gap-2">
 <button
   onClick={() => toggleRole(user._id)}
   className="relative group px-4 py-1.5 rounded-md font-medium text-white
@@ -99,7 +100,7 @@ export default function UserManagement() {
     🗑️ Delete
   </span>
 </button>
-
+</div>
                 </td>
               </tr>
             ))}

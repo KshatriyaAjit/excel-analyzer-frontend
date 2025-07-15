@@ -105,7 +105,7 @@ export default function History() {
       <h2 className="text-2xl font-bold mb-4 text-indigo-700">
         Upload History
       </h2>
-      <div className="overflow-x-auto">
+      <div className="w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
         <table className="min-w-full border text-sm bg-white dark:bg-gray-800">
           <thead className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100">
             <tr>
@@ -130,7 +130,10 @@ export default function History() {
                 <td className="border px-4 py-2 text-gray-800 dark:text-gray-100">
                   {new Date(file.uploadedAt).toLocaleString()}
                 </td>
-                <td className="border px-4 py-2 space-x-2">
+                <td className="border px-4 py-2 ">
+                <div className="flex flex-wrap sm:flex-nowrap gap-2">
+
+               
                   <button
                     onClick={() => handleView(file._id)}
                     className="group relative px-5 py-2 bg-blue-600 text-white rounded-lg overflow-hidden transition-all duration-300 hover:bg-blue-700 cursor-pointer"
@@ -204,6 +207,8 @@ export default function History() {
                       Delete
                     </span>
                   </button>
+
+                   </div>
                 </td>
               </tr>
             ))}
@@ -264,7 +269,7 @@ export default function History() {
         <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
           <div
             ref={modalRef}
-            className="bg-white dark:bg-gray-900 p-6 rounded shadow max-w-4xl w-full max-h-[80vh] overflow-y-auto relative dark:text-gray-100"
+            className="bg-white dark:bg-gray-900 p-4 sm:p-6 rounded shadow max-w-[95vw] sm:max-w-4xl w-full max-h-[90vh] overflow-auto relative dark:text-gray-100"
           >
             <h3 className="text-lg font-bold mb-4 text-gray-800 dark:text-gray-100">
               File Data

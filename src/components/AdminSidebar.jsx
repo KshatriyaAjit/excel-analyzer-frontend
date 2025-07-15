@@ -37,15 +37,25 @@ export default function AdminSidebar() {
       </div>
 
       {/* Sidebar */}
-      <aside
-        className={`${
-          isMobileOpen ? "block" : "hidden md:block"
-        } md:relative z-50
-  shadow-md dark:shadow-[4px_0_10px_rgba(0,0,0,0.3)]
-  bg-gradient-to-b from-indigo-200 via-indigo-300 to-indigo-100 text-indigo-900
+ <aside
+  className={`${
+    isMobileOpen ? "block" : "hidden md:block"
+  } shadow-md dark:shadow-[4px_0_10px_rgba(0,0,0,0.3)]
+  bg-gradient-to-b from-indigo-200 via-indigo-300 to-indigo-100 text-indigo-900 
   dark:bg-gray-900 dark:!bg-none dark:text-white
-  w-full md:w-72 md:h-screen md:fixed transition-all`}
-      >
+  w-full md:w-72 h-screen fixed md:relative z-50 transition-all`}
+>
+
+  {/* Close button for mobile */}
+  <div className="flex justify-end md:hidden px-4 pt-4">
+    <button
+      onClick={() => setIsMobileOpen(false)}
+      className="text-white text-3xl font-bold cursor-pointer"
+    >
+      &times;
+    </button>
+  </div>
+
         <div className="flex flex-col h-full py-6 px-4">
           <h2 className="text-2xl font-bold mb-8 text-center">Admin Panel</h2>
 
@@ -71,10 +81,8 @@ export default function AdminSidebar() {
                   </NavLink>
                 </li>
               ))}
-            </ul>
-          </nav>
 
-          {/* Toggle to Dashboard Button */}
+                  {/* Toggle to Dashboard Button */}
           {user?.role === "admin" && (
             <button
               onClick={switchToUserPanel}
@@ -87,6 +95,9 @@ export default function AdminSidebar() {
 
 
 
+
+            </ul>
+          </nav>
         </div>
       </aside>
     </>

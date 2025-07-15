@@ -38,9 +38,9 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-indigo-200 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
-      <div className="bg-white dark:bg-gray-900 border dark:border-gray-700 shadow-xl rounded-xl p-8 w-full max-w-md transition-all duration-300">
-        <h2 className="text-3xl font-semibold text-center mb-6 text-indigo-700 dark:text-indigo-400">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-indigo-200 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 px-4">
+      <div className="bg-white dark:bg-gray-900 border dark:border-gray-700 shadow-xl rounded-xl p-6 sm:p-8 w-full max-w-md transition-all duration-300">
+        <h2 className="text-xl sm:text-3xl font-semibold text-center mb-6 text-indigo-700 dark:text-indigo-400">
           Create an Account
         </h2>
 

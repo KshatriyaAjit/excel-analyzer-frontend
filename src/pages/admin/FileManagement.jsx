@@ -96,7 +96,8 @@ export default function FileManagement() {
                   <td className="border px-3 py-2">
                     {new Date(file.uploadedAt).toLocaleString()}
                   </td>
-                  <td className="border px-3 py-2 space-x-2">
+                  <td className="border px-3 py-2 ">
+                     <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                     <button
                       onClick={() =>
                         handleDownload(file._id, file.originalName)
@@ -143,6 +144,7 @@ export default function FileManagement() {
                         Delete
                       </span>
                     </button>
+                    </div>
                   </td>
                 </tr>
               ))

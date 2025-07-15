@@ -56,7 +56,8 @@ export default function Header() {
         Excel Analytics Platform
       </h1>
 
-      <div className="flex items-center justify-between  gap-4">
+      <div className="flex justify-between items-center w-full sm:w-auto gap-4">
+
         {/* 🌙 Dark Mode Toggle */}
         <button
           onClick={toggleDarkMode}
@@ -85,12 +86,12 @@ export default function Header() {
         )}
 
         {/* Name */}
-        <span
-          onClick={goToProfile}
-          className="text-sm font-medium text-gray-700 dark:text-gray-200 cursor-pointer hover:underline"
-        >
-          {user?.name || "User"}
-        </span>
+     <span
+  onClick={goToProfile}
+  className="hidden sm:inline text-sm font-medium text-gray-700 dark:text-gray-200 cursor-pointer hover:underline"
+>
+  {user?.name || "User"}
+</span>
 
         {/* Logout Button */}
         <button
