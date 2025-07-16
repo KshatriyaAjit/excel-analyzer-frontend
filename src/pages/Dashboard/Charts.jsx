@@ -165,7 +165,7 @@ export default function Charts() {
 
       {/* File Selection */}
       <div className="mb-6">
-        <label className="block text-sm font-medium mb-1">Select File</label>
+        <label className="block text-lg font-medium mb-1">Select File</label>
         <select
           value={selectedFileId}
           onChange={(e) => setSelectedFileId(e.target.value)}
@@ -182,7 +182,7 @@ export default function Charts() {
       {/* Controls */}
       <div className="grid md:grid-cols-3 gap-6 mb-8">
         <div>
-          <label className="block text-sm font-medium mb-1">Chart Type</label>
+          <label className="block text-lg font-medium mb-1">Chart Type</label>
           <select
             value={chartType}
             onChange={(e) => setChartType(e.target.value)}
@@ -196,7 +196,7 @@ export default function Charts() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-1">X-Axis</label>
+          <label className="block text-lg font-medium mb-1">X-Axis</label>
           <select
             value={xField}
             onChange={(e) => setXField(e.target.value)}
@@ -212,20 +212,29 @@ export default function Charts() {
 
         {chartType !== "pie" && (
           <div>
-            <label className="block text-sm font-medium mb-1">Y-Axis</label>
-            <select
-              value={yField}
-              onChange={(e) => setYField(e.target.value)}
-              className="w-full p-2 border rounded-md bg-white dark:bg-gray-700 text-black dark:text-white"
-            >
-              {fields
-                .filter((field) => typeof data[0]?.[field] === "number")
-                .map((field) => (
-                  <option key={field} value={field}>
-                    {field}
-                  </option>
-                ))}
-            </select>
+            <label className="block text-lg font-medium mb-1">
+                    Y-Axis <span className="text-sm text-red-400">(Only numeric fields allowed)</span>
+           </label>
+{fields.filter((field) => typeof data[0]?.[field] === "number").length > 0 ? (
+  <select
+    value={yField}
+    onChange={(e) => setYField(e.target.value)}
+    className="w-full p-2 border rounded-md bg-white dark:bg-gray-700 text-black dark:text-white"
+  >
+    {fields
+      .filter((field) => typeof data[0]?.[field] === "number")
+      .map((field) => (
+        <option key={field} value={field}>
+          {field}
+        </option>
+      ))}
+  </select>
+) : (
+  <p className="text-sm text-red-500 mt-2">
+    ⚠ No numeric columns found in this file to plot on Y-axis.
+  </p>
+)}
+
           </div>
         )}
       </div>
